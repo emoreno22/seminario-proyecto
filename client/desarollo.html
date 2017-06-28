@@ -1,0 +1,141 @@
+<template name="templateClient2">
+  {{#if conectado}}
+    {{>templateFormChat2}}
+  {{else}}
+    {{>connect_template2}}
+  {{/if}}
+</template>
+<template name="connect_template2">
+  <div class="row">
+    <div class="col s12">
+      <center>
+        <button type="button" class="waves-effect waves-light btn-large"><i class="mdi-file-cloud right"></i>conectarse</button>
+      </center>
+    </div>
+  </div>
+</template>
+<template name="templateFormChat2">
+
+
+
+  <div class="col s12 m7">
+    <h2 class="header">Material 1</h2>
+    <div class="card horizontal">
+      <div class="card-image">
+        <img src="https://lorempixel.com/100/190/nature/6">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <p>Aprende phyton con django</p>
+        </div>
+        <div class="card-action">
+          <a href="#">archivos del curso</a>
+        </div>
+        <div class="card-action">
+          <a href="#">chat</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col s12 m7">
+    <h2 class="header">Material 2</h2>
+    <div class="card horizontal">
+      <div class="card-image">
+        <img src="https://lorempixel.com/100/190/nature/6">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <p>Desarolla juegos con 2dbox</p>
+        </div>
+        <div class="card-action">
+          <a href="#">archivos del curso</a>
+        </div>
+        <div class="card-action">
+          <a href="#">chat</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col s12 m7">
+    <h2 class="header">Material 3</h2>
+    <div class="card horizontal">
+      <div class="card-image">
+        <img src="https://lorempixel.com/100/190/nature/6">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <p>desarolla juegos con 2dbox</p>
+        </div>
+        <div class="card-action">
+          <a href="#">archivos del curso</a>
+        </div>
+        <div class="card-action">
+          <a href="#">chat</a>
+        </div>
+      </div>
+    </div>
+  </div>
+            
+
+  <div class="row">
+    <div class="col s12"> 
+      <div class="row">
+        <div class="col s12 chat">
+          <div class="rectangle_hidden_client">
+            <div class="container_chat">
+            <div class="row">
+            {{#each list_msn}}
+              {{#if idMe}}
+                <div class="row">
+                  <div class="col s2">
+                
+                  </div>
+                <div class="col s10">
+                  <div class="card-panel deep-purple darken-1">
+                    <span class="white-text"><B>{{user_source.username}}></B> {{message}} 
+                  </span>
+                </div>
+              </div>
+            </div>
+              {{else}}
+                <div class="row">
+              <div class="col s10">
+                <div class="card-panel teal">
+                  <span class="white-text"><B>{{user_source.username}} ></B> {{message}}
+                  </span>
+                </div>
+              </div>
+            </div>
+              {{/if}}
+            {{/each}}
+            
+
+          </div>
+          </div>  
+          </div>
+          
+            
+        </div>
+        <div class="col s12">
+          <form action="" method="POST" class="chatform">
+            <div class="input-field"> 
+              <div class="form-group">
+                
+                <span class="help-block"></span>
+                <input type="text" name="msn" class="form-control" id="" placeholder="Messages">
+              </div>
+            </div>  
+          </form>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s6">
+      <button type="button" class="waves-effect waves-light btn-large"><i class="mdi-file-cloud right"></i>Desconectar</button>
+    </div>
+  </div>
+</template>
